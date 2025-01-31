@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .fact-display {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            min-height: 100px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Aurora Facts</h1>
+        <div id="factDisplay" class="fact-display"></div>
+        <button id="newFactButton">Show Random Fact</button>
+    </div>
+    <script>
+        const auroraFacts = [
+            {
+                fact: "Natural Light Display",
+                description: "Auroras, also known as the Northern and Southern Lights (Aurora Borealis and Aurora Australis), are natural light displays predominantly seen in high-latitude regions around the Arctic and Antarctic."
+            },
+            {
+                fact: "Caused by Solar Wind",
+                description: "Auroras occur when charged particles from the sun (solar wind) collide with gases in Earth's atmosphere, primarily oxygen and nitrogen, resulting in beautiful light displays."
+            },
+            {
+                fact: "Colors of Auroras",
+                description: "The colors of auroras can vary, with green being the most common due to oxygen at lower altitudes. Other colors include red, purple, and blue, which are produced by different gases and altitudes."
+            },
+            {
+                fact: "Best Viewing Times",
+                description: "The best time to view auroras is during the winter months when nights are longer and skies are darker. They are most commonly seen between September and April."
+            },
+            {
+                fact: "Geographic Locations",
+                description: "Auroras are typically visible in regions near the magnetic poles, including parts of Canada, Alaska, Norway, Sweden, Finland, and Russia for the Northern Lights, and Antarctica for the Southern Lights."
+            },
+            {
+                fact: "Auroral Oval",
+                description: "The auroras occur in a ring-shaped zone around the magnetic poles known as the auroral oval. This oval expands and contracts based on solar activity."
+            },
+            {
+                fact: "Historical Significance",
+                description: "Throughout history, auroras have been interpreted in various ways by different cultures, often seen as omens or messages from the gods."
+            },
+            {
+                fact: "Scientific Study",
+                description: "The study of auroras has contributed to our understanding of space weather and its effects on Earth's magnetosphere, atmosphere, and even technology."
+            },
+            {
+                fact: "Auroras on Other Planets",
+                description: "Auroras are not unique to Earth; they have been observed on other planets, including Jupiter and Saturn, where their auroras can be even more intense due to stronger magnetic fields."
+            },
+            {
+                fact: "Photography and Tourism",
+                description: "The beauty of auroras has made them a popular subject for photography and a major attraction for tourists, leading to aurora tourism in many northern regions."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * auroraFacts.length);
+            const selectedFact = auroraFacts[randomIndex];
+            document.getElementById('factDisplay').innerHTML = `<strong>${selectedFact.fact}</strong><p>${selectedFact.description}</p>`;
+        });
+    </script>
+</body>
+</html>
